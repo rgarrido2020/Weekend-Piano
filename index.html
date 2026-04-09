@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekend Piano — Temporada Fundacional 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Cormorant+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #F7F5F2;
+      color: #2C2A22;
+      font-family: 'Cormorant', serif;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 48px;
+      border-bottom: 0.5px solid rgba(44,42,34,0.3);
+    }
+    .logo {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      color: #2C2A22;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 300;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      text-decoration: none;
+    }
+    .nav-links a:hover { opacity: 0.6; }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 96px 48px 80px;
+      border-bottom: 0.5px solid rgba(44,42,34,0.3);
+    }
+    .hero-sup {
+      font-family: 'Cormorant SC', serif;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      margin-bottom: 6px;
+    }
+    .hero-sup2 {
+      font-family: 'Cormorant SC', serif;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      margin-bottom: 40px;
+    }
+    .hero-title {
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      font-size: 86px;
+      line-height: 0.92;
+      color: #2C2A22;
+      margin-bottom: 36px;
+    }
+    .hero-title em { font-style: italic; }
+    .hero-place {
+      font-family: 'Cormorant SC', serif;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      margin-bottom: 10px;
+    }
+    .hero-dates {
+      font-family: 'Cormorant SC', serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      margin-bottom: 6px;
+    }
+    .hero-format {
+      font-family: 'Cormorant SC', serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+      margin-bottom: 48px;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn-p {
+      background: #2C2A22;
+      color: #F7F5F2;
+      border: none;
+      padding: 14px 36px;
+      font-family: 'Cormorant SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      cursor: pointer;
+    }
+    .btn-p:hover { opacity: 0.85; }
+    .btn-s {
+      background: transparent;
+      color: #2C2A22;
+      border: 0.5px solid #2C2A22;
+      padding: 14px 36px;
+      font-family: 'Cormorant SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      cursor: pointer;
+    }
+    .btn-s:hover { background: rgba(44,42,34,0.05); }
+
+    /* ── STATS ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 0.5px solid rgba(44,42,34,0.3);
+    }
+    .stat {
+      padding: 36px 48px;
+      border-right: 0.5px solid rgba(44,42,34,0.3);
+      text-align: center;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      font-size: 44px;
+      line-height: 1;
+      color: #2C2A22;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-family: 'Cormorant SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #2C2A22;
+    }
+
+    /* ── PROGRAMA ── */
+    .section { padding: 72px 48px; border-bottom: 0.5px solid rgba(44,42,34,0.3); }
+    .section-header { display: flex; align-items: baseline; gap: 20px; margin-bottom: 44px; }
+    .section-num { font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.25em; color: #1A1914; }
+    .section-title { font-family: 'Cormorant SC', serif; font-weight: 300; font-size: 20px; letter-spacing: 0.18em; color: #2C2A22; }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 0.5px solid rgba(44,42,34,0.25);
+    }
+    .date-card {
+      padding: 32px 28px;
+      border-right: 0.5px solid rgba(44,42,34,0.25);
+      border-bottom: 0.5px solid rgba(44,42,34,0.25);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .date-card:nth-child(3n) { border-right: none; }
+    .date-card:nth-child(4), .date-card:nth-child(5), .date-card:nth-child(6) { border-bottom: none; }
+    .date-card:hover { background: rgba(44,42,34,0.03); }
+    .date-month { font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.25em; color: #2C2A22; margin-bottom: 6px; }
+    .date-day { font-family: 'Cormorant', serif; font-weight: 400; font-size: 44px; line-height: 1; color: #2C2A22; margin-bottom: 10px; }
+    .date-note { font-family: 'Cormorant', serif; font-weight: 300; font-size: 14px; font-style: italic; color: #2C2A22; line-height: 1.5; margin-bottom: 18px; }
+    .date-tags { display: flex; gap: 8px; }
+    .tag { border: 0.5px solid rgba(44,42,34,0.3); padding: 4px 10px; font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.15em; color: #2C2A22; }
+
+    /* ── ENTRADAS ── */
+    .entradas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .ent-info { padding: 72px 48px; border-right: 0.5px solid rgba(44,42,34,0.25); }
+    .ent-form { padding: 72px 48px; background: rgba(44,42,34,0.025); }
+
+    .ent-title { font-family: 'Cormorant', serif; font-weight: 400; font-size: 34px; line-height: 1.1; color: #2C2A22; margin-bottom: 20px; }
+    .ent-title em { font-style: italic; }
+    .ent-desc { font-family: 'Cormorant', serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #2C2A22; margin-bottom: 36px; }
+
+    .block-label { font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.22em; color: #2C2A22; margin-bottom: 12px; }
+
+    table { width: 100%; border-collapse: collapse; margin-bottom: 32px; }
+    thead tr { border-bottom: 0.5px solid rgba(44,42,34,0.2); }
+    th { font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.2em; color: #2C2A22; padding: 8px 0; font-weight: 300; text-align: left; }
+    th:not(:first-child) { text-align: right; }
+    td { font-family: 'Cormorant', serif; font-weight: 300; font-size: 16px; color: #2C2A22; padding: 12px 0; border-bottom: 0.5px solid rgba(44,42,34,0.1); vertical-align: middle; }
+    td:not(:first-child) { text-align: right; }
+    td:first-child { font-weight: 400; }
+
+    .fundador-box {
+      background: rgba(44,42,34,0.04);
+      border: 0.5px solid rgba(44,42,34,0.25);
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .f-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+    .f-name { font-family: 'Cormorant', serif; font-weight: 400; font-size: 18px; color: #2C2A22; }
+    .f-price { font-family: 'Cormorant', serif; font-weight: 400; font-size: 22px; color: #2C2A22; }
+    .f-sub { font-family: 'Cormorant', serif; font-weight: 300; font-size: 14px; font-style: italic; color: #2C2A22; margin-bottom: 12px; }
+    .f-bens { list-style: none; }
+    .f-bens li { font-family: 'Cormorant', serif; font-weight: 300; font-size: 14px; color: #2C2A22; padding: 3px 0; }
+    .f-bens li::before { content: "—"; margin-right: 8px; opacity: 0.8; }
+
+    /* ── FORM ── */
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-family: 'Cormorant SC', serif; font-size: 9px; letter-spacing: 0.22em; color: #2C2A22; margin-bottom: 7px; }
+    .form-select, .form-input {
+      width: 100%;
+      background: #F7F5F2;
+      border: 0.5px solid rgba(44,42,34,0.35);
+      padding: 11px 14px;
+      font-family: 'Cormorant', serif;
+      font-size: 17px;
+      font-weight: 300;
+      color: #2C2A22;
+      appearance: none;
+      outline: none;
+    }
+    .ml-btn {
+      width: 100%;
+      background: #009EE3;
+      border: none;
+      padding: 15px;
+      font-family: 'Cormorant SC', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      cursor: pointer;
+      color: #fff;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .ml-btn:hover { opacity: 0.9; }
+    .ml-note { font-family: 'Cormorant', serif; font-weight: 300; font-size: 13px; font-style: italic; color: #2C2A22; margin-top: 10px; text-align: center; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 44px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px solid rgba(44,42,34,0.2);
+    }
+    .footer-l { font-family: 'Cormorant SC', serif; font-weight: 300; font-size: 11px; letter-spacing: 0.25em; color: #2C2A22; }
+    .footer-r { font-family: 'Cormorant', serif; font-weight: 300; font-size: 14px; font-style: italic; color: #2C2A22; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Weekend Piano</div>
+    <ul class="nav-links">
+      <li><a href="#programa">Temporada</a></li>
+      <li><a href="#entradas">Entradas</a></li>
+      <li><a href="#entradas">Abonos</a></li>
+      <li><a href="mailto:contacto@weekendpiano.cl">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-sup">Casa Piedra · San Carlos de Apoquindo</p>
+    <p class="hero-sup2">Temporada Fundacional · 2026</p>
+    <h1 class="hero-title">Week<em>end</em><br>Piano</h1>
+    <p class="hero-place">Casa Piedra · San Carlos de Apoquindo</p>
+    <p class="hero-dates">Junio — Noviembre 2026</p>
+    <p class="hero-format">12 Conciertos · Formato 360°</p>
+    <div class="cta-row">
+      <button class="btn-p" onclick="document.getElementById('entradas').scrollIntoView({behavior:'smooth'})">Adquirir entradas</button>
+      <button class="btn-s" onclick="document.getElementById('programa').scrollIntoView({behavior:'smooth'})">Ver programa</button>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Jornadas</div></div>
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">Conciertos</div></div>
+    <div class="stat"><div class="stat-num">276</div><div class="stat-label">Asistentes por función</div></div>
+    <div class="stat"><div class="stat-num">360°</div><div class="stat-label">Configuración escénica</div></div>
+  </div>
+
+  <!-- PROGRAMA -->
+  <section class="section" id="programa">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Programa 2026</h2>
+    </div>
+    <div class="dates-grid">
+      <div class="date-card">
+        <div class="date-month">Junio</div>
+        <div class="date-day">07</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+      <div class="date-card">
+        <div class="date-month">Julio</div>
+        <div class="date-day">05</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+      <div class="date-card">
+        <div class="date-month">Agosto</div>
+        <div class="date-day">02</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+      <div class="date-card">
+        <div class="date-month">Septiembre</div>
+        <div class="date-day">06</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+      <div class="date-card">
+        <div class="date-month">Octubre</div>
+        <div class="date-day">04</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+      <div class="date-card">
+        <div class="date-month">Noviembre</div>
+        <div class="date-day">07</div>
+        <div class="date-note">Intérprete emergente · Pianista consolidado</div>
+        <div class="date-tags"><span class="tag">AM · 12:00</span><span class="tag">PM · 18:00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTRADAS -->
+  <section class="section" id="entradas" style="padding:0; border-bottom: 0.5px solid rgba(44,42,34,0.25);">
+    <div class="entradas-grid">
+      <div class="ent-info">
+        <div class="section-header" style="margin-bottom:32px;">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Entradas y Abonos</h2>
+        </div>
+        <h3 class="ent-title">Asistir a una función,<br><em>o a toda la temporada</em></h3>
+        <p class="ent-desc">Cada entrada corresponde a una función específica. Los abonos permiten acompañar el ciclo con condiciones preferenciales y asiento reservado.</p>
+
+        <p class="block-label">Entradas individuales</p>
+        <table>
+          <thead><tr><th>Categoría</th><th>Precio</th><th>Neto final</th></tr></thead>
+          <tbody>
+            <tr><td>General</td><td>$24.000</td><td>$17.750</td></tr>
+            <tr><td>Tercera edad</td><td>$21.000</td><td>$15.530</td></tr>
+            <tr><td>Estudiante</td><td>$18.000</td><td>$13.310</td></tr>
+          </tbody>
+        </table>
+
+        <p class="block-label">Abonos</p>
+        <table>
+          <thead><tr><th>Modalidad</th><th>Precio</th><th>Por concierto</th><th>Desc.</th></tr></thead>
+          <tbody>
+            <tr><td>3 conciertos</td><td>$63.000</td><td>$21.000</td><td>12,5%</td></tr>
+            <tr><td>6 conciertos</td><td>$115.000</td><td>$19.170</td><td>20%</td></tr>
+            <tr><td>9 conciertos</td><td>$164.000</td><td>$18.220</td><td>24%</td></tr>
+          </tbody>
+        </table>
+
+        <div class="fundador-box">
+          <div class="f-head">
+            <span class="f-name">Abono Fundador · 12 conciertos</span>
+            <span class="f-price">$210.000</span>
+          </div>
+          <p class="f-sub">$17.500 por concierto · 27% de descuento · Máximo 24 abonos</p>
+          <ul class="f-bens">
+            <li>Asiento reservado durante toda la temporada</li>
+            <li>Invitación a la recepción previa junto a las empresas fundadoras</li>
+            <li>Categoría exclusiva de la primera edición</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ent-form">
+        <div class="section-header" style="margin-bottom:32px;">
+          <span class="section-num">—</span>
+          <h2 class="section-title">Reservar</h2>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Modalidad</label>
+          <select class="form-select">
+            <option value="">Seleccionar</option>
+            <optgroup label="Entradas individuales">
+              <option>General · $24.000</option>
+              <option>Tercera edad · $21.000</option>
+              <option>Estudiante · $18.000</option>
+            </optgroup>
+            <optgroup label="Abonos">
+              <option>Abono 3 conciertos · $63.000</option>
+              <option>Abono 6 conciertos · $115.000</option>
+              <option>Abono 9 conciertos · $164.000</option>
+              <option>Abono Fundador 12 conciertos · $210.000</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Fecha</label>
+          <select class="form-select">
+            <option value="">Seleccionar jornada</option>
+            <option>07 Junio 2026</option>
+            <option>05 Julio 2026</option>
+            <option>02 Agosto 2026</option>
+            <option>06 Septiembre 2026</option>
+            <option>04 Octubre 2026</option>
+            <option>07 Noviembre 2026</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Función</label>
+          <select class="form-select">
+            <option value="">Seleccionar función</option>
+            <option>AM · 12:00 hrs — Intérprete emergente</option>
+            <option>PM · 18:00 hrs — Pianista consolidado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Cantidad</label>
+          <select class="form-select">
+            <option>1 entrada</option>
+            <option>2 entradas</option>
+            <option>3 entradas</option>
+            <option>4 entradas</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Correo electrónico</label>
+          <input class="form-input" type="email" placeholder="nombre@empresa.cl" />
+        </div>
+        <button class="ml-btn">Pagar con Mercado Pago</button>
+        <p class="ml-note">Pago seguro · Confirmación inmediata por correo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-l">Weekend Piano · Casa Piedra · San Carlos de Apoquindo</div>
+    <div class="footer-r">Producción: Concerto SpA · Temporada 2026</div>
+  </footer>
+
+</body>
+</html>
